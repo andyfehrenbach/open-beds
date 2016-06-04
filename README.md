@@ -2,6 +2,7 @@
 
 ## About
 
+A desktop and mobile web app with logins for homeless shelter staff to update total and available bed counts dynamically as they are filled and vacated permanently or temporarily on a given night, and to make referrals when they are full, with contact info, wet/dry restrictions and shelter descriptions, and map/locator integration for unsheltered persons to identify nearby potential vacancies. May be supplemented or enhanced with locators for food, clothing, medical and other resources, emergency numbers, etc. e.g. using the Handbook of the Streets distributed by St. Stephen's Human Services as a starting point.  Would require commitments by participating agencies and their personnel to enter updates in a timely fashion for near-realtime accuracy.  A Spanish translation would be a big help too.
 
 ## Code branches
 

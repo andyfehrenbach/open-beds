@@ -6,8 +6,8 @@
     .controller('MapController', MapController);
 
   /** @ngInject */
-  function MapController($timeout, toastr) {
-    var vm = this;
-    
+  function MapController() {
+    //var vm = this;
+
   }
 })();

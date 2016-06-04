@@ -6,8 +6,8 @@
     .controller('DetailController', DetailController);
 
   /** @ngInject */
-  function DetailController($timeout, toastr) {
-    var vm = this;
+  function DetailController() {
+    //var vm = this;
 
   }
 })();

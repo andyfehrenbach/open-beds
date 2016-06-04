@@ -6,8 +6,8 @@
     .controller('ListController', ListController);
 
   /** @ngInject */
-  function ListController($timeout, toastr) {
-    var vm = this;
+  function ListController() {
+    //var vm = this;
 
   }
 })();

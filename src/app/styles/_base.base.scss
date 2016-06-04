@@ -5,13 +5,24 @@ html {
 }
 
 
+
 .container {
   width: 100vw;
   padding: 0;
 }
 
+button {
+  border: none;
+}
+
+a {
+  color: $ob-blue-dark;
+
+}
+
 .flex {
   display: flex;
+  width: 100%;
   &--wrap {
     flex-flow: wrap;
   }

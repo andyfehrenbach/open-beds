@@ -1,8 +1,44 @@
 .ob-list {
+  margin: 0;
+  padding: 0;
+  a {
+    color: $ob-black;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $ob-black;
+    }
+  }
   &-item {
-    margin-left:200000;
     background: $ob-white;
-    border: 1px solid $ob-grey-03;
+    border: 1px solid $ob-grey-04;
+    border-bottom: none;
     padding: 24px;
+    transition: 0.3s background ease;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      background: $ob-grey-04;
+    }
+    &:last-child {
+      border-bottom: 1px solid $ob-grey-04;
+    }
+  }
+  .ob-arrow {
+    padding: 14px 20px;
+    background: $ob-blue;
+    color: $ob-white;
+    border-radius: 60px;
+    transition: 0.3s background ease;
+    polygon {
+      fill: $ob-black;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background: $ob-blue-dark;
+    }
   }
 }

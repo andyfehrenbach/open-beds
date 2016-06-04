@@ -16,8 +16,14 @@ a:hover, a:focus {
   color: blue;
 }
 
-a .navbar-brands {
+a.navbar-brand {
   text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: fixed;
+  left: .8rem;
+  top: .8rem;
   &:hover {
     color: #000;
   }
@@ -40,4 +46,5 @@ nav.navbar .navbar-fixed-top {
   position: fixed;
     right: 4rem;
     top: 1.3rem;
+    font-size: .75rem;
 }

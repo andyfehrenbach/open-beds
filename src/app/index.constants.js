@@ -4,7 +4,6 @@
 
   angular
     .module('openBeds3')
-    .constant('malarkey', malarkey)
     .constant('moment', moment);
 
 })();

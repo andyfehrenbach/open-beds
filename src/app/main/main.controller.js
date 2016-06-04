@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController($timeout, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -29,11 +29,11 @@
     }
 
     function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
+/*        vm.awesomeThings = webDevTec.getTec();
 
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
+        angular.forEach(vm.awesomeThings, function(awesomeThing) {
+          awesomeThing.rank = Math.random();
+        });*/
     }
   }
 })();

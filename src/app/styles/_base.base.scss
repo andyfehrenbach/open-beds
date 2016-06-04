@@ -4,7 +4,28 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+
 .container {
   width: 100vw;
   padding: 0;
+}
+
+.flex {
+  display: flex;
+  &--wrap {
+    flex-flow: wrap;
+  }
+  &--space-around {
+    justify-content: space-around;
+  }
+  &--space-between {
+    justify-content: space-between;
+  }
+  &--center {
+    justify-content: center;
+  }
+  &--middle {
+    align-items: center;
+  }
+
 }

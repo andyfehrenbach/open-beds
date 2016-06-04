@@ -3,11 +3,11 @@
 
   angular
     .module('openBeds3')
-    .controller('MainController', MainController);
+    .controller('DetailController', DetailController);
 
   /** @ngInject */
-  function MainController() {
+  function DetailController() {
     //var vm = this;
-    
+
   }
 })();

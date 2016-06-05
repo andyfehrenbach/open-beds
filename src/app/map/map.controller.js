@@ -5,14 +5,19 @@
     .module('openBeds3')
     .controller('MapController', MapController);
   /** @ngInject */
-  function MapController() {
+  function MapController(shelters, $scope) {
       //mapByLocation("123 Hennepin Ave.");
-      displayMap();
+    shelters.getShelters().success(function (data) {
+      displayMap(data.feed.entry);
+      //return result; //JavaScript object
+    });
+
   }
-    function displayMap() {
+    function displayMap(list) {
+      console.log("displayMap enter");
          var geocoder;
-      var lat; 
-      var lng;  
+      var lat;
+      var lng;
       var infowindow;
       $.ajax({
           url: "http://www.google.com/jsapi",
@@ -21,12 +26,12 @@
           async: true,
       }).success(function() {
           setTimeout(function() {
-                var geocoder = new google.maps.Geocoder(); 
+                var geocoder = new google.maps.Geocoder();
                 lat = google.loader.ClientLocation.latitude;
                 lng = google.loader.ClientLocation.longitude;
           }, 1000);
        })
-       .error(function() {          
+       .error(function() {
        });
       $.ajax({
           url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJrc3CMvMrJ-3R5Enzpab3Vr6XclpK1g",
@@ -54,12 +59,12 @@
                 infowindow.open(map, marker);
               });
               map.addListener('dragend', function() {
-                 infowindow.close();                  
+                 infowindow.close();
               });
       }, 1000);
       })
-      .error(function(){        
+      .error(function(){
       });
     }
-    
+
 })();

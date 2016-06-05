@@ -17,8 +17,7 @@
       .state('map', {
         url: '/map',
         templateUrl: 'app/map/map.html',
-        controller: 'MapController',
-        controllerAs: 'vm'
+        controller: 'MapController'
       })
       .state('list', {
         url: '/list',

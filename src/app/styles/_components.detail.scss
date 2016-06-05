@@ -1,0 +1,26 @@
+.ob-back-arrow {
+  height: 16px;
+  margin: 2px 8px 0 0;
+}
+
+.map-container {
+
+}
+
+.map-detail {
+  height: 50vh;
+  background: grey;
+}
+
+.shelter {
+  margin: 24px;
+  font-size: 1.2rem;
+  &__label {
+    margin-top : 12px;
+    color: $ob-blue;
+  }
+  ul {
+    margin: 0;
+    padding: 0 0 0 24px;
+  }
+}

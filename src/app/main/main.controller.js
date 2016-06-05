@@ -6,8 +6,8 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
+  function MainController(shelters) {
     //var vm = this;
-    
+    shelters.getShelters();
   }
 })();

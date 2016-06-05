@@ -5,10 +5,12 @@
     .module('openBeds3')
     .controller('MapController', MapController);
   /** @ngInject */
-  function MapController($http, $scope) {
+  function MapController() {
       var geocoder;
       var lat; 
       var lng;  
+      var infowindow;
+      //shelters.getShelters();
       $.ajax({
           url: "http://www.google.com/jsapi",
           dataType:"script",
@@ -35,11 +37,25 @@
             center: new google.maps.LatLng(lat, lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
-           var map = new google.maps.Map(document.getElementById('map'),
-              mapOptions);
+           var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: map,
+                icon: '/assets/images/king-size-bed-with-two-pillows.png',
+                title: 'Hello World!',
+            });
+              infowindow = new google.maps.InfoWindow({
+                content: '<a href="https://google.com">' + "CLICK HERE" + '</a><br/>'+'Title:'+'<br/>'+'Beds Available:'+'<br/>'+'Curfew'
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+              map.addListener('dragend', function() {
+                 infowindow.close();                  
+              });
       }, 1000);
       })
       .error(function(){        
       });
-  }
+  }     
 })();

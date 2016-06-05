@@ -20,3 +20,7 @@ $ob-grey-03: #999;
 $ob-grey-02: #555;
 $ob-grey-01: #333;
 $ob-black: #222;
+
+//shadows
+$ob-blue-light-shadow: darken($ob-blue-light, 15%);
+$ob-blue-shadow: darken($ob-blue, 10%);

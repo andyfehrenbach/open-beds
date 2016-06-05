@@ -4,10 +4,12 @@
   a {
     color: $ob-black;
     text-decoration: none;
+    font-size: 1.12rem;
     &:hover,
     &:focus,
     &:active {
-      color: $ob-black;
+      color: $ob-white;
+      outline: none;
     }
   }
   &-titles {
@@ -18,31 +20,30 @@
   }
   &-item {
     background: $ob-white;
-    border: 1px solid $ob-grey-04;
-    border-bottom: none;
+    border-top: 1px solid $ob-grey-04;
     padding: 24px 12px;
     transition: 0.3s background ease;
     span {
-      min-width: 100px;
+      min-width: 80px;
       text-align: center;
     }
     &:hover,
     &:focus,
     &:active {
       text-decoration: none;
-      background: $ob-grey-04;
+      background: $ob-blue;
     }
     &:last-child {
       border-bottom: 1px solid $ob-grey-04;
     }
   }
   .ob-arrow {
-    background: $ob-blue;
+    background: $ob-blue-light;
     border-radius: 25px;
-    padding: 10px 11px;
+    padding: 8px 11px;
     svg {
       height: 20px;
-      margin: 3px 0 0 5px;
+      margin: 5px 0 0 4px;
     }
     polygon {
       fill: $ob-white;

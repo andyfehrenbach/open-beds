@@ -7,12 +7,10 @@
 
   /** @ngInject */
   function DetailController() {
-    //var vm = this;
       var geocoder;
       var lat; 
       var lng;  
       var infowindow;
-      //var element = document.getElementsByClassName("shelter__location--street");
       var address = $(".shelter__location--street").text();
       $.ajax({
           url: "http://www.google.com/jsapi",
@@ -52,18 +50,10 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(lat, lng),
                 map: map,
-                icon: '/assets/images/king-size-bed-with-two-pillows.png',
-                title: 'Hello World!',
+                icon: '/assets/images/bed.png',
+                title: 'Shelter',
             });
-              infowindow = new google.maps.InfoWindow({
-                content: '<a href="https://google.com">' + "CLICK HERE" + '</a><br/>'+'Title:'+'<br/>'+'Beds Available:'+'<br/>'+'Curfew'
-              });
-              marker.addListener('click', function() {
-                infowindow.open(lat, lng);
-              });
-              map.addListener('dragend', function() {
-                 infowindow.close();                  
-              });
+
       }, 1500);
       })
       .error(function(){  

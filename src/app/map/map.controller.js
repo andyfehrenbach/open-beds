@@ -11,7 +11,6 @@
           dataType:"script",
           timeout: 2*10000
       }).success(function() {
-          //$(document).ready(function() {
           setTimeout(function() {
                var mapOptions = {
             zoom: 8,

@@ -21,8 +21,7 @@
                 lng = google.loader.ClientLocation.longitude;
           }, 1000);
        })
-       .error(function() {
-           
+       .error(function() {          
        });
       $.ajax({
           url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJrc3CMvMrJ-3R5Enzpab3Vr6XclpK1g",
@@ -36,13 +35,11 @@
             center: new google.maps.LatLng(lat, lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
-           map = new google.maps.Map(document.getElementById('map'),
+           var map = new google.maps.Map(document.getElementById('map'),
               mapOptions);
       }, 1000);
       })
-      .error(function(){
-          
+      .error(function(){        
       });
   }
-
 })();

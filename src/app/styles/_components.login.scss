@@ -1,0 +1,50 @@
+.center-header {
+  text-align: center;
+  background-color: $ob-blue-light;
+  text-shadow: .1rem .1rem 0 #000;
+  border-bottom: .2em solid $ob-blue-light-shadow;
+  border-top: .1em solid lighten($ob-blue-light, 15%);
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.login-form {
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
+.form-group {
+  margin: .6em auto;
+  width: 100%;
+}
+
+input {
+  border: 2px solid $ob-grey-04;
+  // display: inline;
+  font-size: 1rem;
+}
+
+label {
+  // display: inline;
+  text-align: right;
+  margin-right: .5em;
+}
+
+button {
+  @extend .center-header;
+  padding: .4em 1.2em;
+  border-radius: 4px;
+  border: none;
+  box-shadow: -.1em .1em .1em rgba(0,0,0,.2);
+  font-size: 1.3rem;
+  letter-spacing: .1em;
+  margin-top: .5em;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}

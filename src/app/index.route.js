@@ -31,7 +31,14 @@
         templateUrl: 'app/detail/detail.html',
         controller: 'DetailController',
         controllerAs: 'vm'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginController',
+        controllerAs: 'vm'
       });
+
 
     $urlRouterProvider.otherwise('/map');
   }

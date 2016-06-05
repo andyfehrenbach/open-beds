@@ -1,4 +1,12 @@
 //Base styles
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 html {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;

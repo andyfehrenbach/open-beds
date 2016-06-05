@@ -5,11 +5,12 @@
     .module('openBeds3')
     .controller('MapController', MapController);
   /** @ngInject */
-  function MapController($http, $scope) {
+  function MapController() {
       var geocoder;
       var lat; 
       var lng;  
       var infowindow;
+      //shelters.getShelters();
       $.ajax({
           url: "http://www.google.com/jsapi",
           dataType:"script",

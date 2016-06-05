@@ -15,8 +15,9 @@ A desktop and mobile web app with logins for homeless shelter staff to update to
 ## Prerequisites
 
 1. Install node.js  
-2. Install git command line 
-3. Install some global node modules
+2. Install python  
+3. Install git command line 
+4. Install some global node modules
  
 ```bash
 $ sudo npm install -g bower gulp protractor

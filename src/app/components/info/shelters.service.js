@@ -19,7 +19,7 @@
       vm.loading = true;
 
 
-      $.ajax({
+      return $.ajax({
         url: vm.apiHost,
         dataType: "jsonp",
         timeout: 2 * 10000

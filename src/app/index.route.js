@@ -23,8 +23,7 @@
       .state('list', {
         url: '/list',
         templateUrl: 'app/list/list.html',
-        controller: 'ListController',
-        controllerAs: 'vm'
+        controller: 'ListController'
       })
       .state('detail', {
         url: '/detail',

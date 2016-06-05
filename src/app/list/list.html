@@ -1,1 +1,33 @@
 
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <ul class="display-view flex">
+    <li class="active"><a href="#">Map View</a></li>
+    <li><a href="#list">List View</a></li>
+  </ul>
+
+  <ul class="ob-list flex flex--wrap">
+    <li class="ob-list-titles">
+      <span class="label">Shelter Name</span>
+      <span class="label">Beds Available</span>
+      <span class="label">Distance</span>
+      <span class="spacer"></span>
+    </li>
+    <a href="#" class="ob-list-item flex" ng-repeat="item in list">
+      <li class="flex flex--space-between flex--middle">
+        <span>{{item.gsx$kefvalue.$t}}</span>
+        <span>{{item.gsx$openbeds.$t}}</span>
+        <span>coming soon</span>
+        <div class="ob-arrow">
+          <svg viewBox="0 0 100 100">
+            <polygon points="20.2,6.4 26.6,0.3 79.8,50 26.6,99.7 20.2,93.7 66.9,50 "/>
+          </svg>
+        </div>
+      </li>
+    </a>
+  </ul>
+</div>

@@ -1,5 +1,22 @@
 .navbar {
   height: 60px;
+  .logo {
+    height: 35px;
+    margin-right: 12px;
+  }
+  .fill-white {
+    fill: $ob-white;
+  }
+  .stroke-blue {
+    stroke: $ob-black;
+    transform: 0.3s stroke ease;
+  }
+  &-brand:hover {
+    .stroke-blue {
+      stroke: $ob-blue;
+      color: $ob-blue;
+    }
+  }
 }
 
 .acme-navbar-text{

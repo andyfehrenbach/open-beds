@@ -4,6 +4,38 @@
   angular
     .module('openBeds3')
     .controller('MapController', MapController);
+    var cities = [
+    {
+        city : 'Toronto',
+        desc : 'This is the best city in the world!',
+        lat : 43.7000,
+        long : -79.4000
+    },
+    {
+        city : 'New York',
+        desc : 'This city is aiiiiite!',
+        lat : 40.6700,
+        long : -73.9400
+    },
+    {
+        city : 'Chicago',
+        desc : 'This is the second best city in the world!',
+        lat : 41.8819,
+        long : -87.6278
+    },
+    {
+        city : 'Los Angeles',
+        desc : 'This city is live!',
+        lat : 34.0500,
+        long : -118.2500
+    },
+    {
+        city : 'Las Vegas',
+        desc : 'Sin City...\'nuff said!',
+        lat : 36.0800,
+        long : -115.1522
+    }
+];
   /** @ngInject */
   function MapController($http, $scope) {
       var geocoder;
@@ -35,11 +67,16 @@
             center: new google.maps.LatLng(lat, lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
           };
-           var map = new google.maps.Map(document.getElementById('map'),
-              mapOptions);
+           var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: map,
+                icon: '/assets/images/king-size-bed-with-two-pillows.png',
+                title: 'Hello World!'
+            });
       }, 1000);
       })
       .error(function(){        
       });
-  }
+  }     
 })();

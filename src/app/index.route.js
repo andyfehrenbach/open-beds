@@ -26,6 +26,12 @@
         controller: 'ListController',
         controllerAs: 'vm'
       })
+      .state('counter', {
+        url: '/counter',
+        templateUrl: 'app/counter/counter.html',
+        controller: 'CounterController',
+        controllerAs: 'vm'
+      })
       .state('detail', {
         url: '/detail',
         templateUrl: 'app/detail/detail.html',

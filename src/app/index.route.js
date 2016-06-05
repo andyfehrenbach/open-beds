@@ -43,6 +43,12 @@
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'app/register/register.html',
+        controller: 'RegisterController',
+        controllerAs: 'vm'
       });
 
 

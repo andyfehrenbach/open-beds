@@ -9,6 +9,7 @@
       var geocoder;
       var lat; 
       var lng;  
+      var infowindow;
       $.ajax({
           url: "http://www.google.com/jsapi",
           dataType:"script",
@@ -42,13 +43,15 @@
                 icon: '/assets/images/king-size-bed-with-two-pillows.png',
                 title: 'Hello World!',
             });
-              var infowindow = new google.maps.InfoWindow({
+              infowindow = new google.maps.InfoWindow({
                 content: '<a href="https://google.com">' + "CLICK HERE" + '</a><br/>'+'Title:'+'<br/>'+'Beds Available:'+'<br/>'+'Curfew'
               });
               marker.addListener('click', function() {
                 infowindow.open(map, marker);
               });
-
+              map.addListener('dragend', function() {
+                 infowindow.close();                  
+              });
       }, 1000);
       })
       .error(function(){        

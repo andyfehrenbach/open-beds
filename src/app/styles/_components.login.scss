@@ -10,11 +10,14 @@
   padding: 1rem;
 }
 
+
 .login-form {
+
   margin: 2rem auto;
   font-size: 1.2rem;
   padding-left: 1rem;
 }
+
 
 .form-group {
   margin: .6em auto;
@@ -42,7 +45,14 @@ button {
   font-size: 1.3rem;
   letter-spacing: .1em;
   margin-top: .5em;
+
 }
+
+button.back {
+  background-color: $ob-grey-03;
+  margin-left: 1em;
+}
+
 
 input[type="checkbox"] {
   width: 16px;

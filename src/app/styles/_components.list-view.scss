@@ -26,6 +26,10 @@
     span {
       min-width: 80px;
       text-align: center;
+      &:first-child {
+        width: 114px;
+        text-align: left;
+      }
     }
     &:hover,
     &:focus,

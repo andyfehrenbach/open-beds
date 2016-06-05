@@ -37,11 +37,15 @@
     }
   }
   .ob-arrow {
+    background: $ob-blue;
+    border-radius: 25px;
+    padding: 10px 11px;
     svg {
-      height: 36px;
+      height: 20px;
+      margin: 3px 0 0 5px;
     }
     polygon {
-      fill: $ob-black;
+      fill: $ob-white;
     }
   }
   .spacer {

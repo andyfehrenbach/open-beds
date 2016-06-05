@@ -2,27 +2,21 @@
   <div>
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
   </div>
-  <div class="counter">
-    <form action="" class="flex flex--center flex--wrap">
-      <label class="counter__label flex flex--middle flex--center" for="availableBeds flex">
-        <input class="counter__input" type="number" name="availableBeds" min="0" max="500">
-        Beds
-      </label>
-      <div class="counter__beds flex flex--center">
-        <span>
-          remaining, out of
+  <div class="counter flex flex--center flex--middle flex--wrap">
+    <form action="" class="">
+      <label class="counter__label flex flex--wrap flex--middle flex--center" for="availableBeds flex">
+        <input class="counter__input flex" type="number" name="availableBeds" min="0" max="1000" value="0">
+        <span class="flex flex--center flex--middle">
+          <span>
+          Available Beds
+          </span>
         </span>
-      </div>
-      <label class="counter__label flex flex--middle flex--center" for="totalBeds flex">
-        <input class="counter__input" type="number" name="totalBeds" min="1" max="500">
-        Beds
       </label>
-
     </form>
   </div>
   <ul class="display-view flex">
-    <li class="active">
-      <a href="#" class="flex flex--middle flex--center">
+    <li class="active flex text--center">
+      <a href="#">
         Update
        </a>
      </li>

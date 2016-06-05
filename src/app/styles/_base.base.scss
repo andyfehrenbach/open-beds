@@ -47,28 +47,3 @@ a {
   }
 
 }
-
-.display-view {
-  margin-top: 51px;
-  padding: 0;
-  list-style-type: none;
-  text-transform: uppercase;
-  li{
-    margin: 0;
-    padding: 1rem;
-  // border: 1px solid #000;
-    flex: 1;
-    background-color: $ob-blue-light;
-    color: #fff;
-    text-align: center;
-    letter-spacing: .15rem;
-    font-size: 1.3rem;
-    text-shadow: .1rem .1rem 0 #000;
-    border-bottom: .2em solid $ob-blue-light-shadow;
-    &:active {
-      background-color:$ob-blue;
-      border-bottom: .2em solid
-    }
-
-  }
-}

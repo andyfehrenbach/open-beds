@@ -41,6 +41,7 @@
     background: $ob-blue-light;
     border-radius: 25px;
     padding: 8px 11px;
+    margin-left: .5em;
     svg {
       height: 20px;
       margin: 5px 0 0 4px;
@@ -52,4 +53,8 @@
   .spacer {
     min-width: 50px;
   }
+}
+
+span.label {
+  padding-right: 1em;
 }

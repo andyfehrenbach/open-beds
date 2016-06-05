@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -6,8 +6,24 @@
     .controller('ListController', ListController);
 
   /** @ngInject */
-  function ListController() {
-    //var vm = this;
+  function ListController(shelters, $scope) {
+
+    $scope.awesomeThings = [];
+    $scope.classAnimation = '';
+    $scope.creationDate = 1465065838946;
+
+    $scope.listInfo = function () {
+      return $scope.list;
+    };
+    $scope.list = [];
+
+    shelters.getShelters().success(function (data) {
+      $scope.list = data.feed.entry;
+      $scope.$apply();
+      //return result; //JavaScript object
+    });
 
   }
 })();
+
+

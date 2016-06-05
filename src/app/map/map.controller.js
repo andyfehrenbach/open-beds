@@ -44,8 +44,8 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(lat, lng),
                 map: map,
-                icon: '/assets/images/king-size-bed-with-two-pillows.png',
-                title: 'Hello World!',
+                icon: '/assets/images/bed.png',
+                title: 'Shelter',
             });
               infowindow = new google.maps.InfoWindow({
                 content: '<a href="https://google.com">' + "CLICK HERE" + '</a><br/>'+'Title:'+'<br/>'+'Beds Available:'+'<br/>'+'Curfew'

@@ -23,6 +23,7 @@
       background-color: $ob-blue-light;
       text-shadow: .1rem .1rem 0 #000;
       border-bottom: .2em solid $ob-blue-light-shadow;
+      border-top: .1em solid lighten($ob-blue-light, 15%);
       &:first-child {
         border-right: .1em solid $ob-blue-light-shadow;
       }
@@ -32,6 +33,7 @@
       &:hover, &:active, &:focus {
         background-color: darken($ob-blue-light, 15%);
         border-bottom: .2em solid darken($ob-blue-light-shadow, 15%);
+        border-top: .2em solid darken($ob-blue-light-shadow, 15%);
       }
 
     &:hover, &:active, &:focus {

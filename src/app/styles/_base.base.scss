@@ -1,10 +1,8 @@
 //Base styles
 
-@mixin centerer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+//utility class:
+div, ul, li, a, h1, h2, h3, h4, h5, h6 {
+  border: 1px solid #000;
 }
 
 html {

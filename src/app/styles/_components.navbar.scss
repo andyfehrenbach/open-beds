@@ -1,5 +1,6 @@
 .navbar {
   height: 60px;
+  width: 100vw;
   .logo {
     height: 35px;
     margin-right: 12px;
@@ -45,6 +46,7 @@ a.navbar-brand {
   position: absolute;
   left: .8rem;
   top: .8rem;
+  width: 70%;
   &:hover {
     color: #000;
   }

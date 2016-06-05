@@ -5,8 +5,12 @@
     .module('openBeds3')
     .controller('MapController', MapController);
   /** @ngInject */
-  function MapController($http, $scope) {
-      var geocoder;
+  function MapController() {
+      //mapByLocation("123 Hennepin Ave.");
+      displayMap();
+  }
+    function displayMap() {
+         var geocoder;
       var lat; 
       var lng;  
       var infowindow;
@@ -56,5 +60,6 @@
       })
       .error(function(){        
       });
-  }     
+    }
+    
 })();

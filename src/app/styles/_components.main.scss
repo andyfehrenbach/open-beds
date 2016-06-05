@@ -29,12 +29,12 @@
       &:last-child {
         border-left: .1em solid lighten($ob-blue-light, 15%);
       }
-      &:hover, &:active {
+      &:hover, &:active, &:focus {
         background-color: darken($ob-blue-light, 15%);
         border-bottom: .2em solid darken($ob-blue-light-shadow, 15%);
       }
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus {
       color: #fff;
     }
     // &:visited {

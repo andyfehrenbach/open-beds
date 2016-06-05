@@ -1,0 +1,32 @@
+.counter {
+    border-top: 5px solid $ob-blue;
+    height: calc(100vh - 131px);
+    &__beds {
+      border-bottom: 5px solid $ob-grey-02;
+      margin: 24px 0 52px;
+      span {
+        background: $ob-white;
+        padding: 6px 12px;
+        position: relative;
+        top: 18px;
+        color: $ob-grey-02;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+      }
+    }
+    &__input {
+      font-size: 7rem;
+      border-radius: 3px;
+      border: 2px solid $ob-grey-02;
+      margin-right: 12px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0 24px 24px;
+    }
+    &__label {
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      color: $ob-grey-02;
+      text-align: center;
+    }
+}

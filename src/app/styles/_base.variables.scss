@@ -22,5 +22,6 @@ $ob-grey-01: #333;
 $ob-black: #222;
 
 //shadows
+$ob-blue-dark-shadow: darken($ob-blue-dark, 15%);
 $ob-blue-light-shadow: darken($ob-blue-light, 15%);
-$ob-blue-shadow: darken($ob-blue, 10%);
+$ob-blue-shadow: darken($ob-blue, 15%);

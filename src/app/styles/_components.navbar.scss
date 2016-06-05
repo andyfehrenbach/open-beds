@@ -9,7 +9,7 @@
   }
   .stroke-blue {
     stroke: $ob-black;
-    transform: 0.3s stroke ease;
+    transition: stroke 0.3s ease;
   }
   &-brand:hover {
     .stroke-blue {

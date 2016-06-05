@@ -9,19 +9,25 @@
   font-size: 1.5rem;
   padding: 1rem;
 }
-
-
 .login-form {
-
-  margin: 2rem auto;
   font-size: 1.2rem;
-  padding-left: 1rem;
-}
-
-
-.form-group {
-  margin: .6em auto;
+  max-width: 500px;
   width: 100%;
+  margin: 0 25px;
+}
+.form-control {
+  padding: 12px;
+  border: 1px solid $ob-grey-03;
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-holder {
+  height: calc(100vh - 160px);
 }
 
 input {
@@ -50,7 +56,6 @@ button {
 
 button.back {
   background-color: $ob-grey-03;
-  margin-left: 1em;
 }
 
 

@@ -6,11 +6,14 @@
     .controller('MapController', MapController);
   /** @ngInject */
   function MapController() {
-      var geocoder;
+      //mapByLocation("123 Hennepin Ave.");
+      displayMap();
+  }
+    function displayMap() {
+         var geocoder;
       var lat; 
       var lng;  
       var infowindow;
-      //shelters.getShelters();
       $.ajax({
           url: "http://www.google.com/jsapi",
           dataType:"script",
@@ -57,5 +60,6 @@
       })
       .error(function(){        
       });
-  }     
+    }
+    
 })();

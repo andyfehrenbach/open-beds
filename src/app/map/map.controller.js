@@ -5,66 +5,89 @@
     .module('openBeds3')
     .controller('MapController', MapController);
   /** @ngInject */
+    var isPaused = false;
   function MapController(shelters, $scope) {
-      //mapByLocation("123 Hennepin Ave.");
     shelters.getShelters().success(function (data) {
-      displayMap(data.feed.entry);
-      //return result; //JavaScript object
+      prepMap(data.feed.entry);
     });
 
   }
-    function displayMap(list) {
-      console.log("displayMap enter");
-         var geocoder;
-      var lat;
-      var lng;
-      var infowindow;
-      $.ajax({
-          url: "http://www.google.com/jsapi",
-          dataType:"script",
-          timeout: 2*10000,
-          async: true,
-      }).success(function() {
-          setTimeout(function() {
-                var geocoder = new google.maps.Geocoder();
-                lat = google.loader.ClientLocation.latitude;
-                lng = google.loader.ClientLocation.longitude;
-          }, 1000);
-       })
-       .error(function() {
-       });
-      $.ajax({
-          url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAPJrc3CMvMrJ-3R5Enzpab3Vr6XclpK1g",
-          dataType:"script",
-          timeout: 2*10000,
-          async: true,
-      }).success(function() {
-          setTimeout(function() {
-            var mapOptions = {
-            zoom: 10,
+    function prepMap(list) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            console.log( "Geolocation is not supported by this browser.");
+        }
+        function showPosition(position) {
+            console.log("Latitude: " + position.coords.latitude + 
+            "Longitude: " + position.coords.longitude);
+            loadMap(position.coords.latitude, position.coords.longitude, list);
+        }   
+    }
+    function loadMap(lat, lng, list) {
+        
+        var geocoder = new google.maps.Geocoder();
+        var mapSettings = {
+            zoom: 12,
             center: new google.maps.LatLng(lat, lng),
             mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-           var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(lat, lng),
-                map: map,
-                icon: '/assets/images/bed.png',
-                title: 'Shelter',
-            });
-              infowindow = new google.maps.InfoWindow({
-                content: '<a href="https://google.com">' + "CLICK HERE" + '</a><br/>'+'Title:'+'<br/>'+'Beds Available:'+'<br/>'+'Curfew'
-              });
-              marker.addListener('click', function() {
-                infowindow.open(map, marker);
-              });
-              map.addListener('dragend', function() {
-                 infowindow.close();
-              });
-      }, 1000);
-      })
-      .error(function(){
-      });
+        }
+        var googleMapsLoaded;
+        var map = new google.maps.Map(document.getElementById('map'), mapSettings);
+           google.maps.event.addListener(map, 'tilesloaded', function() {
+           googleMapsLoaded = true;
+           google.maps.event.clearListeners(map, 'tilesloaded');
+        });
+        displayLocations(list, map, googleMapsLoaded);
     }
-
+    function displayLocations(list, map, googleMapsLoaded) {
+      console.log("displayMap enter");
+      var infowindow;
+      var locations = [];
+      locations = getPositions(list, map); 
+    }
+    function getPositions(list, map) {
+        var latlng = [];
+        var lat, lng;
+         var infowindow;
+        var windowList = [];
+        for (var i = 0; i < list.length; i++) {
+            var address = list[i].gsx$address.$t;
+            var geocoder = new google.maps.Geocoder();
+            
+            geocoder.geocode({ 'address': address}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    lat = results[0].geometry.location.lat();
+                    lng = results[0].geometry.location.lng();
+                    var latlng = new google.maps.LatLng(lat,lng);
+                var marker = new google.maps.Marker({
+                    icon: '/assets/images/bed.png',
+                    title: 'Shelter'
+                });
+                marker.setPosition(latlng);
+                infowindow = new google.maps.InfoWindow({
+                  content: '<a href=\"website\"">' + name + '</a>'+'<br/>'+'Beds Available: '+ numOpenBeds +'<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)'
+                });
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
+                map.addListener('dragend', function() {
+                  infowindow.close();
+                });
+                marker.setMap(map);
+                windowList.push(infowindow);
+                var website = list[0].gsx$website.$t;
+                var name = list[0].title.$t;
+                var numOpenBeds = list[0].gsx$openbeds.$t;
+                var phoneNum = list[0].gsx$phone.$t;
+                windowList[0].setContent('<a href="website">' + name + '</a>'+'<br/>'+'Beds Available: '+ numOpenBeds +'<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)');
+                windowList.pop();
+                } else {
+                    console.log("Request failed.")
+                }
+            });
+        }
+        return latlng;
+    }
 })();
+ 

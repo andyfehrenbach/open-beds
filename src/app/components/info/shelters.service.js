@@ -7,7 +7,7 @@
 
   /** @ngInject */
   function shelters($log) {
-    this.apiHost = 'https://spreadsheets.google.com/feeds/list/1n3nykhTCF6_Tj1cEmptHvOzBoPeCKBAf0DXKysArTmE/od6/public/values?alt=json';
+    this.apiHost = 'https://spreadsheets.google.com/feeds/list/1Ws7xmFn62NATEyAfxTKser6PETCoLu1be1fW-vgCz6o/od6/public/values?alt=json';
     this.loading = false;
     this.list = [];
     this.getShelters = getShelters;

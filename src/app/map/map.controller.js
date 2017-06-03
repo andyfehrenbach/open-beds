@@ -53,6 +53,8 @@
         var windowList = [];
         for (var i = 0; i < list.length; i++) {
             var address = list[i].gsx$address.$t;
+            var name = list[i].gsx$address.$t;
+            var website = list[0].gsx$website.$t;
             var geocoder = new google.maps.Geocoder();
             
             geocoder.geocode({ 'address': address}, function (results, status) {
@@ -61,12 +63,11 @@
                     lng = results[0].geometry.location.lng();
                     var latlng = new google.maps.LatLng(lat,lng);
                 var marker = new google.maps.Marker({
-                    icon: '/assets/images/bed.png',
                     title: 'Shelter'
                 });
                 marker.setPosition(latlng);
                 infowindow = new google.maps.InfoWindow({
-                  content: '<a href=\"website\"">' + name + '</a>'+'<br/>'+'Beds Available: '+ numOpenBeds +'<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)'
+                  content: '<a href=\"http://{{website}}\">' + name + '</a>'+'<br/>'+'<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)'
                 });
                 marker.addListener('click', function() {
                   infowindow.open(map, marker);
@@ -78,9 +79,8 @@
                 windowList.push(infowindow);
                 var website = list[0].gsx$website.$t;
                 var name = list[0].title.$t;
-                var numOpenBeds = list[0].gsx$openbeds.$t;
                 var phoneNum = list[0].gsx$phone.$t;
-                windowList[0].setContent('<a href="website">' + name + '</a>'+'<br/>'+'Beds Available: '+ numOpenBeds +'<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)');
+                windowList[0].setContent('<a href=\"http://{{website}}\">' + name + '</a>'+'<br/>'+ '<br/>'+'Phone: '+ phoneNum +'<br/>'+'More Details '+'Deep Link to details page? (coming soon)');
                 windowList.pop();
                 } else {
                     console.log("Request failed.")

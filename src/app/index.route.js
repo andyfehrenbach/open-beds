@@ -42,15 +42,19 @@
         controller: 'LoginController',
         controllerAs: 'vm'
       })
+      .state('providers', {
+        url: '/providers',
+        templateUrl: 'app/providers/providers.html',
+        controller: 'ProviderController',
+        controllerAs: 'vm'
+      })
       .state('register', {
         url: '/register',
         templateUrl: 'app/register/register.html',
         controller: 'RegisterController',
         controllerAs: 'vm'
       });
-
-
-    $urlRouterProvider.otherwise('/map');
+    $urlRouterProvider.otherwise('/providers');
   }
 
 })();
